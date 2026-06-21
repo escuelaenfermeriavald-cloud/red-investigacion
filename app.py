@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import folium
@@ -19,7 +18,7 @@ df = load_data()
 # Buscador
 nombre_buscado = st.text_input("Buscar investigador por nombre:")
 if nombre_buscado:
-    df = df[df['Nombre'].str.contains(nombre_buscado, case=False)]
+    df = df[df['Nombre'].str.contains(nombre_buscado, case=False, na=False)]
 
 # Coordenadas de referencia
 coords_inst = {
